@@ -14,6 +14,10 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
+cp -f ./generic-tp-link.mk target/linux/ath79/image/
+cp -f ./qca9563_tplink_tl-wdr8500-v1.dts target/linux/ath79/dts/
+cp -f ./02_network target/linux/ath79/generic/base-files/etc/board.d/
+
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 echo 'src-git OpenClash https://github.com/vernesong/OpenClash' >>feeds.conf.default
